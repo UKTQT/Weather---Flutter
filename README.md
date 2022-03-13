@@ -24,10 +24,7 @@ Using http in the project, data was retrieved from the Weather API on the https:
 ## Project Screenshots
 
 <table>
-  <tr>
-    <td><img src="" width="350" title="hover text"></td>
-    <td><img src="" width="350" title="hover text"></td>
-  </tr>
+
   <tr>
      <td><img src="https://user-images.githubusercontent.com/17275354/158072016-c0eebec6-aafb-4ce2-91c2-27caab0d34cc.gif" width="350" title="hover text"></td>
     <td><img src="https://user-images.githubusercontent.com/17275354/158071710-d3838ef6-84e3-4b18-8b41-3a02d68e9835.png" width="350" title="hover text"></td>
