@@ -29,11 +29,12 @@ Using http in the project, data was retrieved from the Weather API on the https:
     <td><img src="" width="350" title="hover text"></td>
   </tr>
   <tr>
+     <td><img src="https://user-images.githubusercontent.com/17275354/158072016-c0eebec6-aafb-4ce2-91c2-27caab0d34cc.gif" width="350" title="hover text"></td>
     <td><img src="https://user-images.githubusercontent.com/17275354/158071710-d3838ef6-84e3-4b18-8b41-3a02d68e9835.png" width="350" title="hover text"></td>
     <td><img src="https://user-images.githubusercontent.com/17275354/158071723-c282d1ec-d0cd-4bce-932c-7287886f242a.png" width="350" title="hover text"></td>
-    <td><img src="https://user-images.githubusercontent.com/17275354/158071728-7631c6f1-fe11-4d56-867b-79c3a5e1ff3b.png" width="350" title="hover text"></td>
   </tr>
   <tr>
+    <td><img src="https://user-images.githubusercontent.com/17275354/158071728-7631c6f1-fe11-4d56-867b-79c3a5e1ff3b.png" width="350" title="hover text"></td>
     <td><img src="https://user-images.githubusercontent.com/17275354/158071736-d2263332-bd5d-4f4a-9b0b-7d7c332647ba.png" width="350" title="hover text"></td>
     <td><img src="https://user-images.githubusercontent.com/17275354/158071741-a27be32d-eff6-4eb0-94b6-fe809f597e8f.png" width="350" title="hover text"></td>
   </tr>
