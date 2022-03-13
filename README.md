@@ -26,16 +26,12 @@ Using http in the project, data was retrieved from the Weather API on the https:
 
 #### Use http package as a library
 ```js
-
-   $ flutter pub add http
-        
+   $ flutter pub add http  
 ```
 
 #### Import it. Now in your Dart code, you can use:
 ```js
-
-   $ import 'package:http/http.dart';
-        
+   $ import 'package:http/http.dart';        
 ```
 
 #### Register on collectapi.com and get an api key from the weather api for free.
