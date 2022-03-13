@@ -23,9 +23,19 @@ Using http in the project, data was retrieved from the Weather API on the https:
 
 ## Using
 
-#### Flutter Http Service ✓
-#### Responsive Screen ✖
-#### Clean Code ✓
+#### Register on collectapi.com and get an api key from the weather api for free.
+
+<code>
+   var response = await http.get(
+        Uri.parse(
+            'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=eskişehir'), //Paste Weather Api url
+        headers: {
+          'content-type': 'application/json',
+          'authorization':
+              'apikey .........................' //Paste Weather Api apikey
+        });
+</code 
+
 
 
 </br>
