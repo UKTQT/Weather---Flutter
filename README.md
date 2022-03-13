@@ -25,7 +25,8 @@ Using http in the project, data was retrieved from the Weather API on the https:
 
 #### Register on collectapi.com and get an api key from the weather api for free.
 
-<code>
+```js
+
    var response = await http.get(
         Uri.parse(
             'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=eskişehir'), //Paste Weather Api url
@@ -34,7 +35,8 @@ Using http in the project, data was retrieved from the Weather API on the https:
           'authorization':
               'apikey .........................' //Paste Weather Api apikey
         });
-</code 
+        
+```
 
 
 
