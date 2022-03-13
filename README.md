@@ -14,7 +14,16 @@ Using http in the project, data was retrieved from the Weather API on the https:
 
 ## Project Feature
 
-#### Flutter Http Service✓
+#### Flutter Http Service ✓
+#### Responsive Screen ✖
+#### Clean Code ✓
+
+
+</br>
+
+## Using
+
+#### Flutter Http Service ✓
 #### Responsive Screen ✖
 #### Clean Code ✓
 
