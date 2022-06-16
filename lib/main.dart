@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Weather App',
       home: const MyHomePage(
-        title: 'Flutter Weather App',
+        title: 'Flutter Weather Appp',
       ),
     );
   }
