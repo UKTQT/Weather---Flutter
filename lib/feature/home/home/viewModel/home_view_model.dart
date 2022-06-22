@@ -12,7 +12,9 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
   final HomeService _homeService = HomeService();
 
   @override
-  void init() {}
+  void init() {
+    fetchWeather();
+  }
 
   @override
   void setContext(BuildContext context) => this.baseViewContext = context;

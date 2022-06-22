@@ -11,10 +11,17 @@ class HomeView extends StatelessWidget {
     return BaseView<HomeViewModel>(
       viewModel: HomeViewModel(),
       onModelReady: (model) {
-        viewModel = model;
+        model.setContext(context);
+        model.init();
       },
-      onPageBuilder: (context, value) {
-        return Container();
+      onPageBuilder: (BuildContext context, HomeViewModel _homeViewModel) {
+        return ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: _homeViewModel.weatherItems!.length ?? 1,
+          itemBuilder: (context, index) {
+            return Text('${_homeViewModel.weatherItems?[index].day}');
+          },
+        );
       },
     );
   }

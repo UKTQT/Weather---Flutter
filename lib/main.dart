@@ -20,11 +20,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Weather APP',
       onGenerateRoute: NavigationRoute.instance.generateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,
-      home: const MyHomePage(
+      /* home: const MyHomePage(
         title: 'Flutter Weather Appp',
-      ),
+      ), */
     );
   }
 }
