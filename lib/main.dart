@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:havadurumu/core/init/navigation/navigation_route.dart';
+import 'package:havadurumu/core/init/navigation/navigation_service.dart';
 import 'package:http/http.dart' as http;
 
 import 'pages/settings.dart';
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Weather App',
+      onGenerateRoute: NavigationRoute.instance.generateRoute,
+      navigatorKey: NavigationService.instance.navigatorKey,
       home: const MyHomePage(
         title: 'Flutter Weather Appp',
       ),

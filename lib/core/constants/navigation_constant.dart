@@ -1,8 +1,8 @@
-class NavigationConstant {
-  static NavigationConstant _instance = NavigationConstant._init();
-  static NavigationConstant get instance => _instance;
+class NavigationConstants {
+  /*  static final NavigationConstants _instance = NavigationConstants._init();
+  static NavigationConstants get instance => _instance;
 
-  NavigationConstant._init();
+  NavigationConstants._init(); */
 
   static const DEFAULT = '/';
   static const HOME_VIEW = '/home';
