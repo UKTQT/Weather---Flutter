@@ -49,13 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future getJsonData() async {
     var response = await http.get(
-        Uri.parse(
-            'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=eskişehir'), //Paste Weather Api url
-        headers: {
-          'content-type': 'application/json',
-          'authorization':
-              'apikey ................................' //Paste Weather Api apikey
-        });
+      Uri.parse(
+          'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=eskişehir'), //Paste Weather Api url
+      headers: {
+        'content-type': 'application/json',
+        'authorization':
+            'apikey ................................' //Paste Weather Api apikey
+      },
+    );
 
     setState(() {
       var convertDatatoJson = json.decode(response.body);

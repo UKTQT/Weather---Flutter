@@ -10,8 +10,11 @@ class NetworkManager {
   NetworkManager._init() {
     _dio = Dio(
       BaseOptions(
-        baseUrl:
-            'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=eskişehir',
+        baseUrl: 'https://api.collectapi.com/weather/getWeather',
+        queryParameters: {
+          'data.lang': 'tr',
+          'data.city': 'eskişehir',
+        },
         headers: {
           'content-type': 'application/json',
           'authorization':
