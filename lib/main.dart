@@ -23,9 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Weather APP',
       onGenerateRoute: NavigationRoute.instance.generateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,
-      /* home: const MyHomePage(
-        title: 'Flutter Weather Appp',
-      ), */
+      theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
     );
   }
 }
