@@ -58,7 +58,7 @@ class HomeView extends StatelessWidget {
                                                   Text(
                                                     'Eskişehir',
                                                     style: TextStyle(
-                                                      fontSize: 35,
+                                                      fontSize: 40,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       color: Colors.white,
@@ -107,9 +107,11 @@ class HomeView extends StatelessWidget {
                                                     '${_homeViewModel.weatherItems?[index].icon}'),
                                               ),
                                             ),
-                                            Spacer(
-                                              flex: 1,
-                                            ),
+                                            SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.03),
                                             Expanded(
                                               flex: 1,
                                               child: Row(
@@ -117,36 +119,82 @@ class HomeView extends StatelessWidget {
                                                   Expanded(
                                                     flex: 6,
                                                     child: Container(
-                                                      color: Colors.amber,
-                                                      child: Column(
-                                                        children: [
-                                                          Text('Min'),
-                                                          Text(
-                                                              '${_homeViewModel.weatherItems?[index].min}')
-                                                        ],
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.amber,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                          Radius.circular(14),
+                                                        ),
                                                       ),
+                                                      child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 5),
+                                                          child: Row(
+                                                            children: [
+                                                              Expanded(
+                                                                flex: 7,
+                                                                child: Image(
+                                                                  image: NetworkImage(
+                                                                      '${_homeViewModel.weatherItems?[index].icon}'),
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                  flex: 5,
+                                                                  child: Text(
+                                                                      '${_homeViewModel.weatherItems?[index].night}'))
+                                                            ],
+                                                          )),
                                                     ),
                                                   ),
-                                                  Spacer(),
+                                                  SizedBox(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.04),
                                                   Expanded(
                                                     flex: 6,
                                                     child: Container(
-                                                      color: Colors.amber,
-                                                      child: Column(
-                                                        children: [
-                                                          Text('Min'),
-                                                          Text(
-                                                              '${_homeViewModel.weatherItems?[index].min}')
-                                                        ],
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.amber,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                          Radius.circular(14),
+                                                        ),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                vertical: 5),
+                                                        child: Row(
+                                                          children: [
+                                                            Expanded(
+                                                              flex: 7,
+                                                              child: Image(
+                                                                image: NetworkImage(
+                                                                    '${_homeViewModel.weatherItems?[index].icon}'),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                                flex: 5,
+                                                                child: Text(
+                                                                    '${_homeViewModel.weatherItems?[index].humidity}'))
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
                                                 ],
                                               ),
                                             ),
-                                            Spacer(
-                                              flex: 1,
-                                            ),
+                                            SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.03),
                                             Expanded(
                                               flex: 1,
                                               child: Row(
@@ -154,34 +202,83 @@ class HomeView extends StatelessWidget {
                                                   Expanded(
                                                     flex: 6,
                                                     child: Container(
-                                                      color: Colors.amber,
-                                                      child: Column(
-                                                        children: [
-                                                          Text('Min'),
-                                                          Text(
-                                                              '${_homeViewModel.weatherItems?[index].min}')
-                                                        ],
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.amber,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                          Radius.circular(14),
+                                                        ),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                vertical: 5),
+                                                        child: Row(
+                                                          children: [
+                                                            Expanded(
+                                                              flex: 7,
+                                                              child: Image(
+                                                                image: NetworkImage(
+                                                                    '${_homeViewModel.weatherItems?[index].icon}'),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                                flex: 5,
+                                                                child: Text(
+                                                                    '${_homeViewModel.weatherItems?[index].humidity}'))
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                  Spacer(),
-                                                  Expanded(
+                                                  SizedBox(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.04),
+                                                   Expanded(
                                                     flex: 6,
                                                     child: Container(
-                                                      color: Colors.amber,
-                                                      child: Column(
-                                                        children: [
-                                                          Text('Min'),
-                                                          Text(
-                                                              '${_homeViewModel.weatherItems?[index].min}')
-                                                        ],
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.amber,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                          Radius.circular(14),
+                                                        ),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                vertical: 5),
+                                                        child: Row(
+                                                          children: [
+                                                            Expanded(
+                                                              flex: 7,
+                                                              child: Image(
+                                                                image: NetworkImage(
+                                                                    '${_homeViewModel.weatherItems?[index].icon}'),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                                flex: 5,
+                                                                child: Text(
+                                                                    '${_homeViewModel.weatherItems?[index].humidity}'))
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
                                                 ],
                                               ),
                                             ),
-                                            Spacer(),
+                                            SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.03),
                                           ],
                                         );
                                       },
