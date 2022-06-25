@@ -17,6 +17,6 @@ Expanded bottomBox(
                   return bottomDaysBox(
                       context, _pageViewController, index, _homeViewModel);
                 }))
-        : const CircularProgressIndicator();
+        : const Center(child: CircularProgressIndicator(color: Colors.white));
   }));
 }

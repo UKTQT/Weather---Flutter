@@ -100,7 +100,9 @@ class HomeView extends StatelessWidget {
                                                       .mediumHeightPadding)
                                             ]);
                                           })
-                                      : const CircularProgressIndicator();
+                                      : const Center(
+                                          child: CircularProgressIndicator(
+                                              color: Colors.white));
                                 }))),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.17,
