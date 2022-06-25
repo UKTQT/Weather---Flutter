@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import 'package:havadurumu/core/base/view/base_view.dart';
-import 'package:havadurumu/feature/home/home/viewModel/home_view_model.dart';
-
+import '../viewModel/home_view_model.dart';
+import '../../../../core/base/view/base_view.dart';
 import '../../../../core/components/bottom_days_box/bottom_days_box.dart';
 import '../../../../core/components/property_box/property_box.dart';
 
@@ -140,41 +139,18 @@ class HomeView extends StatelessWidget {
                                                             0.04),
                                                 Expanded(
                                                   flex: 6,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xff093075),
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                        Radius.circular(14),
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding: const EdgeInsets
-                                                              .symmetric(
-                                                          vertical: 5),
-                                                      child: Row(
-                                                        children: [
-                                                          Expanded(
-                                                            flex: 7,
-                                                            child: Image(
-                                                              image: AssetImage(
-                                                                  'assets/images/humidity.png'),
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                              flex: 5,
-                                                              child: Text(
-                                                                '${_homeViewModel.weatherItems?[index].humidity}',
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .white,
-                                                                    fontSize:
-                                                                        20),
-                                                              ))
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
+                                                  child: propertyBox(
+                                                      homeViewModel:
+                                                          _homeViewModel,
+                                                      index: index,
+                                                      bgColor:
+                                                          Color(0xff093075),
+                                                      imgUrl:
+                                                          'assets/images/humidity.png',
+                                                      property: _homeViewModel
+                                                          .weatherItems?[index]
+                                                          .humidity,
+                                                      textColor: Colors.white),
                                                 ),
                                               ],
                                             ),
@@ -190,41 +166,19 @@ class HomeView extends StatelessWidget {
                                               children: [
                                                 Expanded(
                                                   flex: 6,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xff9bc9ff),
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                        Radius.circular(14),
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding: const EdgeInsets
-                                                              .symmetric(
-                                                          vertical: 5),
-                                                      child: Row(
-                                                        children: [
-                                                          Expanded(
-                                                            flex: 7,
-                                                            child: Image(
-                                                              image: AssetImage(
-                                                                  'assets/images/up.png'),
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                              flex: 5,
-                                                              child: Text(
-                                                                '${_homeViewModel.weatherItems?[index].humidity}',
-                                                                style: TextStyle(
-                                                                    color: Color(
-                                                                        0xff093075),
-                                                                    fontSize:
-                                                                        20),
-                                                              ))
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
+                                                  child: propertyBox(
+                                                      homeViewModel:
+                                                          _homeViewModel,
+                                                      index: index,
+                                                      bgColor:
+                                                          Color(0xff9bc9ff),
+                                                      imgUrl:
+                                                          'assets/images/up.png',
+                                                      property: _homeViewModel
+                                                          .weatherItems?[index]
+                                                          .max,
+                                                      textColor:
+                                                          Color(0xff093075)),
                                                 ),
                                                 SizedBox(
                                                     width:
@@ -234,41 +188,19 @@ class HomeView extends StatelessWidget {
                                                             0.04),
                                                 Expanded(
                                                   flex: 6,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xff9bc9ff),
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                        Radius.circular(14),
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding: const EdgeInsets
-                                                              .symmetric(
-                                                          vertical: 5),
-                                                      child: Row(
-                                                        children: [
-                                                          Expanded(
-                                                            flex: 7,
-                                                            child: Image(
-                                                              image: AssetImage(
-                                                                  'assets/images/down.png'),
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                              flex: 5,
-                                                              child: Text(
-                                                                '${_homeViewModel.weatherItems?[index].humidity}',
-                                                                style: TextStyle(
-                                                                    color: Color(
-                                                                        0xff093075),
-                                                                    fontSize:
-                                                                        20),
-                                                              ))
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
+                                                  child: propertyBox(
+                                                      homeViewModel:
+                                                          _homeViewModel,
+                                                      index: index,
+                                                      bgColor:
+                                                          Color(0xff9bc9ff),
+                                                      imgUrl:
+                                                          'assets/images/down.png',
+                                                      property: _homeViewModel
+                                                          .weatherItems?[index]
+                                                          .min,
+                                                      textColor:
+                                                          Color(0xff093075)),
                                                 ),
                                               ],
                                             ),
