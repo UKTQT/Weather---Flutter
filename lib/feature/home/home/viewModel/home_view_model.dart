@@ -28,6 +28,9 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
   }
 
   @observable
+  bool? selected;
+
+  @observable
   List<HomeResult>? weatherItems = [];
 
   @action
