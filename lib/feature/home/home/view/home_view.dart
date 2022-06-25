@@ -4,6 +4,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:havadurumu/core/base/view/base_view.dart';
 import 'package:havadurumu/feature/home/home/viewModel/home_view_model.dart';
 
+import '../../../../core/components/bottom_days_box/bottom_days_box.dart';
+import '../../../../core/components/property_box/property_box.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
 
@@ -116,42 +119,18 @@ class HomeView extends StatelessWidget {
                                               children: [
                                                 Expanded(
                                                   flex: 6,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xff093075),
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                        Radius.circular(14),
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                    .symmetric(
-                                                                vertical: 5),
-                                                        child: Row(
-                                                          children: [
-                                                            Expanded(
-                                                              flex: 7,
-                                                              child: Image(
-                                                                image: AssetImage(
-                                                                    'assets/images/night.ico'),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 5,
-                                                              child: Text(
-                                                                '${_homeViewModel.weatherItems?[index].night}',
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .white,
-                                                                    fontSize:
-                                                                        20),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        )),
-                                                  ),
+                                                  child: propertyBox(
+                                                      homeViewModel:
+                                                          _homeViewModel,
+                                                      index: index,
+                                                      bgColor:
+                                                          Color(0xff093075),
+                                                      imgUrl:
+                                                          'assets/images/night.ico',
+                                                      property: _homeViewModel
+                                                          .weatherItems?[index]
+                                                          .night,
+                                                      textColor: Colors.white),
                                                 ),
                                                 SizedBox(
                                                     width:
@@ -311,85 +290,7 @@ class HomeView extends StatelessWidget {
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.17,
-                    child: Expanded(
-                      child: Observer(
-                        builder: (_) {
-                          return _homeViewModel.weatherItems!.isNotEmpty
-                              ? Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 8, top: 10, bottom: 10),
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount:
-                                        _homeViewModel.weatherItems?.length ??
-                                            0,
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 8),
-                                        child: SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.18,
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              _pageViewController.animateToPage(
-                                                  index,
-                                                  duration: Duration(
-                                                      milliseconds: 200),
-                                                  curve: Curves.easeInOut);
-                                            },
-                                            child: Container(
-                                              decoration: const BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                  Radius.circular(30),
-                                                ),
-                                              ),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Column(
-                                                  children: [
-                                                    const Spacer(flex: 2),
-                                                    Expanded(
-                                                      flex: 5,
-                                                      child: Text(
-                                                        '${_homeViewModel.weatherItems?[index].day}',
-                                                        style: TextStyle(
-                                                          fontSize: 18,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          color: Color.fromARGB(
-                                                              255, 48, 67, 77),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      flex: 8,
-                                                      child: Image(
-                                                        image: NetworkImage(
-                                                            '${_homeViewModel.weatherItems?[index].icon}'),
-                                                      ),
-                                                    ),
-                                                    const Spacer(flex: 2),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                )
-                              : CircularProgressIndicator();
-                        },
-                      ),
-                    ),
+                    child: bottomBox(_homeViewModel, _pageViewController),
                   ),
                 ],
               ),
@@ -397,6 +298,29 @@ class HomeView extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  Expanded bottomBox(
+      HomeViewModel _homeViewModel, PageController _pageViewController) {
+    return Expanded(
+      child: Observer(
+        builder: (_) {
+          return _homeViewModel.weatherItems!.isNotEmpty
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8, top: 10, bottom: 10),
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _homeViewModel.weatherItems?.length ?? 0,
+                    itemBuilder: (context, index) {
+                      return bottomDaysBox(
+                          context, _pageViewController, index, _homeViewModel);
+                    },
+                  ),
+                )
+              : CircularProgressIndicator();
+        },
+      ),
     );
   }
 }
