@@ -33,6 +33,15 @@ class HomeView extends StatelessWidget {
                 context.themeLinearColor2
               ])),
           child: Scaffold(
+            floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+            floatingActionButton: SizedBox(
+              width: 35,
+              child: FloatingActionButton(
+                  backgroundColor: context.whiteColor,
+                  onPressed: () {},
+                  child:
+                      Icon(Icons.settings, color: context.themeLinearColor1)),
+            ),
             body: SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Column(
@@ -54,145 +63,34 @@ class HomeView extends StatelessWidget {
                                       children: [
                                         Expanded(
                                           flex: 2,
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                'Eskişehir',
-                                                style: TextStyle(
-                                                  fontSize: 40,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: context.whiteColor,
-                                                ),
-                                              ),
-                                              Text(
-                                                '${_homeViewModel.weatherItems?[index].description}',
-                                                style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: context.whiteColor,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                          child: titleRow(
+                                              context, _homeViewModel, index),
                                         ),
                                         Expanded(
                                           flex: 1,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                '${_homeViewModel.weatherItems?[index].degree} °',
-                                                style: TextStyle(
-                                                  fontSize: 40,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: context.whiteColor,
-                                                ),
-                                              ),
-                                              Text(
-                                                '${_homeViewModel.weatherItems?[index].date}',
-                                                style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: context.whiteColor,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                          child: degreeRow(
+                                              _homeViewModel, index, context),
                                         ),
                                         Expanded(
                                           flex: 4,
-                                          child: Image(
-                                            image: NetworkImage(
-                                                '${_homeViewModel.weatherItems?[index].icon}'),
-                                          ),
+                                          child: weatherImage(
+                                              _homeViewModel, index),
                                         ),
                                         SizedBox(
                                             height:
                                                 context.mediumHeightPadding),
                                         Expanded(
                                           flex: 1,
-                                          child: Row(
-                                            children: [
-                                              Expanded(
-                                                flex: 6,
-                                                child: propertyBox(
-                                                    homeViewModel:
-                                                        _homeViewModel,
-                                                    index: index,
-                                                    bgColor:
-                                                        context.propertyBox1,
-                                                    imgUrl: AppConstant
-                                                        .instance.NIGHT_CONS,
-                                                    property: _homeViewModel
-                                                        .weatherItems?[index]
-                                                        .night,
-                                                    textColor:
-                                                        context.whiteColor),
-                                              ),
-                                              SizedBox(
-                                                  width: context
-                                                      .mediumWidthPadding2),
-                                              Expanded(
-                                                flex: 6,
-                                                child: propertyBox(
-                                                    homeViewModel:
-                                                        _homeViewModel,
-                                                    index: index,
-                                                    bgColor:
-                                                        context.propertyBox1,
-                                                    imgUrl: AppConstant
-                                                        .instance.HUMIDITY_CONS,
-                                                    property: _homeViewModel
-                                                        .weatherItems?[index]
-                                                        .humidity,
-                                                    textColor:
-                                                        context.whiteColor),
-                                              ),
-                                            ],
-                                          ),
+                                          child: propertyRow1(
+                                              _homeViewModel, index, context),
                                         ),
                                         SizedBox(
                                             height:
                                                 context.mediumHeightPadding),
                                         Expanded(
-                                          flex: 1,
-                                          child: Row(
-                                            children: [
-                                              Expanded(
-                                                flex: 6,
-                                                child: propertyBox(
-                                                    homeViewModel:
-                                                        _homeViewModel,
-                                                    index: index,
-                                                    bgColor:
-                                                        context.propertyBox2,
-                                                    imgUrl: AppConstant.instance
-                                                        .MAX_IMAGE_CONS,
-                                                    property: _homeViewModel
-                                                        .weatherItems?[index]
-                                                        .max,
-                                                    textColor:
-                                                        context.propertyBox1),
-                                              ),
-                                              SizedBox(
-                                                  width: context
-                                                      .mediumWidthPadding2),
-                                              Expanded(
-                                                flex: 6,
-                                                child: propertyBox(
-                                                  homeViewModel: _homeViewModel,
-                                                  index: index,
-                                                  bgColor: context.propertyBox2,
-                                                  imgUrl: AppConstant
-                                                      .instance.MIN_IMAGE_CONS,
-                                                  property: _homeViewModel
-                                                      .weatherItems?[index].min,
-                                                  textColor:
-                                                      context.propertyBox1,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
+                                            flex: 1,
+                                            child: propertyRow2(_homeViewModel,
+                                                index, context)),
                                         SizedBox(
                                             height:
                                                 context.mediumHeightPadding),
@@ -216,6 +114,112 @@ class HomeView extends StatelessWidget {
         );
       },
     );
+  }
+
+  Column titleRow(
+      BuildContext context, HomeViewModel _homeViewModel, int index) {
+    return Column(
+      children: [
+        Text(
+          'Eskişehir',
+          style: TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+            color: context.whiteColor,
+          ),
+        ),
+        Text(
+          '${_homeViewModel.weatherItems?[index].description}',
+          style: TextStyle(
+            fontSize: 20,
+            color: context.whiteColor,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row degreeRow(HomeViewModel _homeViewModel, int index, BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          '${_homeViewModel.weatherItems?[index].degree} °',
+          style: TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+            color: context.whiteColor,
+          ),
+        ),
+        Text(
+          '${_homeViewModel.weatherItems?[index].date}',
+          style: TextStyle(
+            fontSize: 20,
+            color: context.whiteColor,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Image weatherImage(HomeViewModel _homeViewModel, int index) {
+    return Image(
+      image: NetworkImage('${_homeViewModel.weatherItems?[index].icon}'),
+    );
+  }
+
+  Row propertyRow1(
+      HomeViewModel _homeViewModel, int index, BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          flex: 6,
+          child: propertyBox(
+              homeViewModel: _homeViewModel,
+              index: index,
+              bgColor: context.propertyBox1,
+              imgUrl: AppConstant.instance.NIGHT_CONS,
+              property: _homeViewModel.weatherItems?[index].night,
+              textColor: context.whiteColor),
+        ),
+        SizedBox(width: context.mediumWidthPadding2),
+        Expanded(
+          flex: 6,
+          child: propertyBox(
+              homeViewModel: _homeViewModel,
+              index: index,
+              bgColor: context.propertyBox1,
+              imgUrl: AppConstant.instance.HUMIDITY_CONS,
+              property: _homeViewModel.weatherItems?[index].humidity,
+              textColor: context.whiteColor),
+        ),
+      ],
+    );
+  }
+
+  Row propertyRow2(
+      HomeViewModel _homeViewModel, int index, BuildContext context) {
+    return Row(children: [
+      Expanded(
+          flex: 6,
+          child: propertyBox(
+              homeViewModel: _homeViewModel,
+              index: index,
+              bgColor: context.propertyBox2,
+              imgUrl: AppConstant.instance.MAX_IMAGE_CONS,
+              property: _homeViewModel.weatherItems?[index].max,
+              textColor: context.propertyBox1)),
+      SizedBox(width: context.mediumWidthPadding2),
+      Expanded(
+          flex: 6,
+          child: propertyBox(
+              homeViewModel: _homeViewModel,
+              index: index,
+              bgColor: context.propertyBox2,
+              imgUrl: AppConstant.instance.MIN_IMAGE_CONS,
+              property: _homeViewModel.weatherItems?[index].min,
+              textColor: context.propertyBox1))
+    ]);
   }
 
   Expanded bottomBox(
