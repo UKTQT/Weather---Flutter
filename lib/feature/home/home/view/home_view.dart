@@ -46,6 +46,8 @@ class HomeView extends StatelessWidget {
                             builder: (_) {
                               return _homeViewModel.weatherItems!.isNotEmpty
                                   ? PageView.builder(
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
                                       itemCount: 7,
                                       controller: pageViewController,
                                       itemBuilder: (context, index) {
@@ -120,7 +122,8 @@ class HomeView extends StatelessWidget {
                                                     flex: 6,
                                                     child: Container(
                                                       decoration: BoxDecoration(
-                                                        color: Colors.amber,
+                                                        color:
+                                                            Color(0xffffd942),
                                                         borderRadius:
                                                             BorderRadius.all(
                                                           Radius.circular(14),
@@ -136,8 +139,8 @@ class HomeView extends StatelessWidget {
                                                               Expanded(
                                                                 flex: 7,
                                                                 child: Image(
-                                                                  image: NetworkImage(
-                                                                      '${_homeViewModel.weatherItems?[index].icon}'),
+                                                                  image: AssetImage(
+                                                                      'assets/images/night.ico'),
                                                                 ),
                                                               ),
                                                               Expanded(
@@ -158,7 +161,8 @@ class HomeView extends StatelessWidget {
                                                     flex: 6,
                                                     child: Container(
                                                       decoration: BoxDecoration(
-                                                        color: Colors.amber,
+                                                        color:
+                                                            Color(0xffffd942),
                                                         borderRadius:
                                                             BorderRadius.all(
                                                           Radius.circular(14),
@@ -174,8 +178,8 @@ class HomeView extends StatelessWidget {
                                                             Expanded(
                                                               flex: 7,
                                                               child: Image(
-                                                                image: NetworkImage(
-                                                                    '${_homeViewModel.weatherItems?[index].icon}'),
+                                                                image: AssetImage(
+                                                                    'assets/images/humidity.png'),
                                                               ),
                                                             ),
                                                             Expanded(
@@ -203,7 +207,8 @@ class HomeView extends StatelessWidget {
                                                     flex: 6,
                                                     child: Container(
                                                       decoration: BoxDecoration(
-                                                        color: Colors.amber,
+                                                        color:
+                                                            Color(0xff9bc9ff),
                                                         borderRadius:
                                                             BorderRadius.all(
                                                           Radius.circular(14),
@@ -219,8 +224,8 @@ class HomeView extends StatelessWidget {
                                                             Expanded(
                                                               flex: 7,
                                                               child: Image(
-                                                                image: NetworkImage(
-                                                                    '${_homeViewModel.weatherItems?[index].icon}'),
+                                                                image: AssetImage(
+                                                                    'assets/images/up.png'),
                                                               ),
                                                             ),
                                                             Expanded(
@@ -238,11 +243,12 @@ class HomeView extends StatelessWidget {
                                                                   .size
                                                                   .width *
                                                               0.04),
-                                                   Expanded(
+                                                  Expanded(
                                                     flex: 6,
                                                     child: Container(
                                                       decoration: BoxDecoration(
-                                                        color: Colors.amber,
+                                                        color:
+                                                            Color(0xff9bc9ff),
                                                         borderRadius:
                                                             BorderRadius.all(
                                                           Radius.circular(14),
@@ -258,8 +264,8 @@ class HomeView extends StatelessWidget {
                                                             Expanded(
                                                               flex: 7,
                                                               child: Image(
-                                                                image: NetworkImage(
-                                                                    '${_homeViewModel.weatherItems?[index].icon}'),
+                                                                image: AssetImage(
+                                                                    'assets/images/down.png'),
                                                               ),
                                                             ),
                                                             Expanded(
