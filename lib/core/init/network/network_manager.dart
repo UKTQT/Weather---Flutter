@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class NetworkManager {
-  static NetworkManager _instance = NetworkManager._init();
+  static final NetworkManager _instance = NetworkManager._init();
   static NetworkManager get instance => _instance;
 
   late final Dio _dio;

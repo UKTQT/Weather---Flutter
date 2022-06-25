@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:havadurumu/core/base/state/base_state.dart';
+
 import 'package:havadurumu/core/base/view/base_view.dart';
 import 'package:havadurumu/feature/home/home/viewModel/home_view_model.dart';
 

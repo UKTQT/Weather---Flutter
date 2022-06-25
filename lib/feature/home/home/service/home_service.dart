@@ -25,9 +25,7 @@ class HomeService extends IHomeService {
         final _datas = response.data;
         return HomeModel.fromJson(_datas).result;
       }
-    } on DioError catch (e) {
-      print(e);
-    }
+    } on DioError catch (e) {}
     return null;
   }
 }
