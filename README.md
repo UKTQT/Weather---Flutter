@@ -1,10 +1,10 @@
 # Weather App - Dart / Flutter
 
-## Project Status ( Suspended - Askıya Alındı)
+## Project Status ( Continues - Devam Ediyor)
 
 <table>
   <tr>
-     <td><img src="https://user-images.githubusercontent.com/17275354/169695152-423d8751-d60f-4bf8-b89c-97b163b61a84.gif" alt="Suspended" width="300"></td>
+     <td><img src="https://user-images.githubusercontent.com/17275354/169695742-ab0664fc-28a6-42f9-8d2f-a342aef5a62c.gif" alt="Suspended" width="300"></td>
   </tr> 
 </table>
 
