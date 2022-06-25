@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 extension ColorExtension on BuildContext {
   //Base Color
@@ -10,5 +9,5 @@ extension ColorExtension on BuildContext {
   Color get blackColor => Colors.black;
 
   //Theme Color
-  Color get themeMainColor1 => const Color(0xff121212);
+
 }

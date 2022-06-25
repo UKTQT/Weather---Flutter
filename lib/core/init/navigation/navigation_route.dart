@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:havadurumu/core/constants/navigation_constant.dart';
-import 'package:havadurumu/feature/home/home/view/home_view.dart';
+
+import '../../constants/navigation_constant.dart';
+import '../../../feature/home/home/view/home_view.dart';
 
 class NavigationRoute {
   static final NavigationRoute _instance = NavigationRoute._init();
