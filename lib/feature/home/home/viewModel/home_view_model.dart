@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/base/model/base_model.dart';
+import '../../../../core/init/cache/cache_manager.dart';
 import '../model/home_model.dart';
 import '../service/home_service.dart';
 
@@ -13,7 +14,8 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
   final HomeService _homeService = HomeService();
 
   @override
-  void init() {
+  void init() async {
+    await _cacheStart();
     fetchWeather();
   }
 
@@ -22,6 +24,15 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
 
   @observable
   bool isLoading = false;
+
+  Future<void> _cacheStart() async {
+    await CacheManager.prefrencesInit();
+    if (CacheManager.instance.getStringValue('cache_city').isEmpty &&
+        CacheManager.instance.getStringValue('cache_lang').isEmpty) {
+      await CacheManager.instance.setStringValue('cache_city', 'Ankara');
+      await CacheManager.instance.setStringValue('cache_lang', 'tr');
+    }
+  }
 
   @action
   void changeLoading() {

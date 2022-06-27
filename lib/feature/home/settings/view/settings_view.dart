@@ -5,6 +5,7 @@ import 'package:havadurumu/core/constants/navigation_constant.dart';
 import '../../../../core/extensions/color_extension.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/base/view/base_view.dart';
+import '../../../../core/init/cache/cache_manager.dart';
 import '../viewModel/settings_view_model.dart';
 
 class SettingsView extends StatelessWidget {
@@ -49,9 +50,10 @@ class SettingsView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Şehir Seçimi',
-                      style: ThemeData.dark().textTheme.titleLarge,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                     SizedBox(
                       height: context.lowHeightPadding,
@@ -75,12 +77,18 @@ class SettingsView extends StatelessWidget {
                             Icons.arrow_downward,
                             color: context.blackColor,
                           ),
-                          style:
-                              TextStyle(color: Colors.black87, fontSize: 20.0),
-                          value: AppConstant.instance.TURKISH_CITIES[31],
+                          style: TextStyle(
+                            color: context.blackColor,
+                            fontSize: 20.0,
+                          ),
+                          value: CacheManager.instance
+                              .getStringValue('cache_city'),
                           menuMaxHeight:
                               MediaQuery.of(context).size.height * 0.5,
-                          onChanged: (value) {},
+                          onChanged: (valueCity) {
+                            CacheManager.instance
+                                .setStringValue('cache_city', valueCity!);
+                          },
                           items: AppConstant.instance.TURKISH_CITIES
                               .map<DropdownMenuItem<String>>(
                             (String value) {
@@ -96,9 +104,10 @@ class SettingsView extends StatelessWidget {
                     SizedBox(
                       height: context.mediumHeightPadding2,
                     ),
-                    Text(
+                    const Text(
                       'Dil Seçimi',
-                      style: ThemeData.dark().textTheme.titleLarge,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                     SizedBox(height: context.lowHeightPadding),
                     SizedBox(
@@ -120,12 +129,18 @@ class SettingsView extends StatelessWidget {
                             Icons.arrow_downward,
                             color: context.blackColor,
                           ),
-                          style: const TextStyle(
-                              color: Colors.black87, fontSize: 20.0),
-                          value: 'tr',
+                          style: TextStyle(
+                            color: context.blackColor,
+                            fontSize: 20.0,
+                          ),
+                          value: CacheManager.instance
+                              .getStringValue('cache_lang'),
                           menuMaxHeight:
                               MediaQuery.of(context).size.height * 0.5,
-                          onChanged: (value) {},
+                          onChanged: (valueLang) {
+                            CacheManager.instance
+                                .setStringValue('cache_lang', valueLang!);
+                          },
                           items: ['tr', 'en'].map<DropdownMenuItem<String>>(
                             (String value) {
                               return DropdownMenuItem<String>(
@@ -140,7 +155,12 @@ class SettingsView extends StatelessWidget {
                     SizedBox(
                       height: context.highHeightPadding,
                     ),
-                    const Text('Seçim yapıldığı an kaydedilir.'),
+                    const Text(
+                      'Seçim yapıldığı an kaydedilir.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
               ),
