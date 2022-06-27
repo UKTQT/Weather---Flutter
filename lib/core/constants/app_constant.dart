@@ -7,6 +7,7 @@ class AppConstant {
   //Main Constants
   final PROJECT_TITLE = 'Weather App';
   final PROJECT_LOGO_PATH = 'assets/images/marvel-logo.png';
+  final PROJECT_BASE_URL = 'https://api.collectapi.com/weather/';
 
   // Image Constants
   final NIGHT_CONS = 'assets/images/night.ico';
@@ -15,6 +16,10 @@ class AppConstant {
   final MAX_IMAGE_CONS = 'assets/images/up.png';
 
   // Settings Constants
+  final SETTINGS_TITLE = 'Ayarlar';
+  final SETTINGS_CITY_TITLE = 'Şehir Seçimi';
+  final SETTINGS_LANG_TITLE = 'Dil Seçimi';
+  final SETTINGS_DESC = 'Seçim yapıldığı an kaydedilir.';
   final TURKISH_CITIES = [
     "Adana",
     "Adiyaman",

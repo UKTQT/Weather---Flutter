@@ -26,6 +26,7 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
   bool isLoading = false;
 
   Future<void> _cacheStart() async {
+    //First Run Cache Settings
     await CacheManager.prefrencesInit();
     if (CacheManager.instance.getStringValue('cache_city').isEmpty &&
         CacheManager.instance.getStringValue('cache_lang').isEmpty) {

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../cache/cache_manager.dart';
+import '../../constants/app_constant.dart';
 
 class NetworkManager {
   static final NetworkManager _instance = NetworkManager._init();
@@ -12,11 +12,11 @@ class NetworkManager {
   NetworkManager._init() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: 'https://api.collectapi.com/weather/',
+        baseUrl: AppConstant.instance.PROJECT_BASE_URL,
         headers: {
           'content-type': 'application/json',
           'authorization':
-              'apikey 3YpwKq3Z7NViSpqNGsWmcE:4AqTlw0d003lF0OCI6OeGc' //Paste Weather Api apikey
+              'apikey 3YpwKq3Z7NViSpqNGsWmcE:4AqTlw0d003lF0OCI6OeGc'
         },
       ),
     );
