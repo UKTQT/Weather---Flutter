@@ -72,17 +72,18 @@ class SettingsView extends StatelessWidget {
   SizedBox cityDropDown(BuildContext context) {
     return SizedBox(
       child: Container(
-        color: context.whiteColor,
+        color: context.propertyBox2,
         child: DropdownButtonFormField<String>(
           decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   width: 3,
-                  color: context.whiteColor,
+                  color: context.propertyBox2,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: context.whiteColor))),
+                  borderSide:
+                      BorderSide(width: 3, color: context.propertyBox2))),
           isExpanded: true,
           icon: Icon(
             Icons.arrow_downward,
@@ -114,17 +115,18 @@ class SettingsView extends StatelessWidget {
   SizedBox langDropDown(BuildContext context) {
     return SizedBox(
       child: Container(
-        color: context.whiteColor,
+        color: context.propertyBox2,
         child: DropdownButtonFormField<String>(
           decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   width: 3,
-                  color: context.whiteColor,
+                  color: context.propertyBox2,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: context.whiteColor))),
+                  borderSide:
+                      BorderSide(width: 3, color: context.propertyBox2))),
           isExpanded: true,
           icon: Icon(
             Icons.arrow_downward,
