@@ -20,9 +20,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: NavigationService.instance.navigatorKey,
       theme: ThemeData(
         scaffoldBackgroundColor: context.transparentColor,
-        appBarTheme: AppBarTheme(
-          color: context.transparentColor,
-        ),
+        appBarTheme: AppBarTheme(color: context.transparentColor),
       ),
     );
   }

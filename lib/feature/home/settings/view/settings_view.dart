@@ -43,7 +43,7 @@ class SettingsView extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: context.mediumWidthPadding2,
+                  horizontal: context.highWidthPadding2,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -57,19 +57,40 @@ class SettingsView extends StatelessWidget {
                       height: context.lowHeightPadding,
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.10,
-                      width: MediaQuery.of(context).size.width,
-                      child: DropdownButton<String>(
-                        icon: Icon(Icons.arrow_downward),
-                        value: AppConstant.instance.TURKISH_CITIES[31],
-                        onChanged: (value) {},
-                        items: AppConstant.instance.TURKISH_CITIES
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
+                      child: Container(
+                        color: context.whiteColor,
+                        child: DropdownButtonFormField<String>(
+                          decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 3,
+                                  color: context.whiteColor,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      width: 3, color: context.whiteColor))),
+                          isExpanded: true,
+                          icon: Icon(
+                            Icons.arrow_downward,
+                            color: context.blackColor,
+                          ),
+                          style:
+                              TextStyle(color: Colors.black87, fontSize: 20.0),
+                          value: AppConstant.instance.TURKISH_CITIES[31],
+                          menuMaxHeight:
+                              MediaQuery.of(context).size.height * 0.5,
+                          onChanged: (value) {},
+                          items: AppConstant.instance.TURKISH_CITIES
+                              .map<DropdownMenuItem<String>>(
+                            (String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            },
+                          ).toList(),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -79,20 +100,47 @@ class SettingsView extends StatelessWidget {
                       'Dil Seçimi',
                       style: ThemeData.dark().textTheme.titleLarge,
                     ),
+                    SizedBox(height: context.lowHeightPadding),
                     SizedBox(
-                      height: context.lowHeightPadding,
-                    ),
-                    Container(
-                      color: Colors.red,
-                      child: SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.10,
-                        child: TextFormField(),
+                      child: Container(
+                        color: context.whiteColor,
+                        child: DropdownButtonFormField<String>(
+                          decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 3,
+                                  color: context.whiteColor,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      width: 3, color: context.whiteColor))),
+                          isExpanded: true,
+                          icon: Icon(
+                            Icons.arrow_downward,
+                            color: context.blackColor,
+                          ),
+                          style: const TextStyle(
+                              color: Colors.black87, fontSize: 20.0),
+                          value: 'tr',
+                          menuMaxHeight:
+                              MediaQuery.of(context).size.height * 0.5,
+                          onChanged: (value) {},
+                          items: ['tr', 'en'].map<DropdownMenuItem<String>>(
+                            (String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            },
+                          ).toList(),
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: context.highHeightPadding,
                     ),
-                    Text('Seçim yapıldığı an kaydedilir.'),
+                    const Text('Seçim yapıldığı an kaydedilir.'),
                   ],
                 ),
               ),
