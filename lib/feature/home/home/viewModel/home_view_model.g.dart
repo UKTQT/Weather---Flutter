@@ -25,6 +25,22 @@ mixin _$HomeViewModel on _HomeViewModelBase, Store {
     });
   }
 
+  late final _$selectedAtom =
+      Atom(name: '_HomeViewModelBase.selected', context: context);
+
+  @override
+  bool? get selected {
+    _$selectedAtom.reportRead();
+    return super.selected;
+  }
+
+  @override
+  set selected(bool? value) {
+    _$selectedAtom.reportWrite(value, super.selected, () {
+      super.selected = value;
+    });
+  }
+
   late final _$weatherItemsAtom =
       Atom(name: '_HomeViewModelBase.weatherItems', context: context);
 
@@ -67,6 +83,7 @@ mixin _$HomeViewModel on _HomeViewModelBase, Store {
   String toString() {
     return '''
 isLoading: ${isLoading},
+selected: ${selected},
 weatherItems: ${weatherItems}
     ''';
   }
