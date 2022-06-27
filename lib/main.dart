@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:havadurumu/core/init/cache/cache_manager.dart';
 
 import 'core/init/navigation/navigation_route.dart';
 import 'core/init/navigation/navigation_service.dart';

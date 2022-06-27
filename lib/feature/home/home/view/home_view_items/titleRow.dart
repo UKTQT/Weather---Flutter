@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/init/cache/cache_manager.dart';
 import '../../viewModel/home_view_model.dart';
 import '../../../../../core/extensions/color_extension.dart';
 
 Column titleRow(BuildContext context, HomeViewModel _homeViewModel, int index) {
   return Column(children: [
-    Text('Eskişehir',
+    Text(CacheManager.instance.getStringValue('cache_city'),
         style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.bold,
