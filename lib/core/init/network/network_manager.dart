@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 
+import '../cache/cache_manager.dart';
+
 class NetworkManager {
   static final NetworkManager _instance = NetworkManager._init();
   static NetworkManager get instance => _instance;
@@ -11,10 +13,6 @@ class NetworkManager {
     _dio = Dio(
       BaseOptions(
         baseUrl: 'https://api.collectapi.com/weather/',
-        queryParameters: {
-          'data.lang': 'tr',
-          'data.city': 'eskişehir',
-        },
         headers: {
           'content-type': 'application/json',
           'authorization':
