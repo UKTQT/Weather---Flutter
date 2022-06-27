@@ -5,6 +5,7 @@ import '../viewModel/home_view_model.dart';
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/color_extension.dart';
 import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/constants/navigation_constant.dart';
 
 import 'home_view_items/bottomBox.dart';
 import 'home_view_items/degreeRow.dart';
@@ -43,7 +44,10 @@ class HomeView extends StatelessWidget {
                       width: 35,
                       child: FloatingActionButton(
                           backgroundColor: context.whiteColor,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, NavigationConstants.SETTINGS_VIEW);
+                          },
                           child: Icon(Icons.settings,
                               color: context.themeLinearColor1))),
                   body: SizedBox(
