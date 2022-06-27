@@ -54,7 +54,7 @@ class HomeView extends StatelessWidget {
                       height: MediaQuery.of(context).size.height,
                       child: Column(children: [
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.82,
+                            height: MediaQuery.of(context).size.height * 0.8,
                             child: Padding(
                                 padding: const EdgeInsets.only(
                                     top: 50, left: 20, right: 20),
@@ -109,9 +109,14 @@ class HomeView extends StatelessWidget {
                                               color: context.whiteColor));
                                 }))),
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.17,
-                            child:
-                                bottomBox(_homeViewModel, _pageViewController))
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    color: context.whiteColor,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20))),
+                                child: bottomBox(
+                                    _homeViewModel, _pageViewController)))
                       ]))));
         });
   }

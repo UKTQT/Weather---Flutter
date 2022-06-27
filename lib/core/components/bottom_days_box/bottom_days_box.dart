@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../extensions/color_extension.dart';
 import '../../../feature/home/home/viewModel/home_view_model.dart';
 
 Padding bottomDaysBox(BuildContext context, PageController _pageViewController,
@@ -7,15 +8,16 @@ Padding bottomDaysBox(BuildContext context, PageController _pageViewController,
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8),
     child: SizedBox(
-      width: MediaQuery.of(context).size.width * 0.18,
+      width: MediaQuery.of(context).size.width * 0.17,
       child: GestureDetector(
         onTap: () {
           _pageViewController.animateToPage(index,
-              duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeInOut);
         },
         child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
+          decoration: BoxDecoration(
+            color: context.propertyBox1,
             borderRadius: BorderRadius.all(
               Radius.circular(30),
             ),
@@ -33,7 +35,7 @@ Padding bottomDaysBox(BuildContext context, PageController _pageViewController,
                       fontSize: 18,
                       overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 48, 67, 77),
+                      color: Colors.white,
                     ),
                   ),
                 ),

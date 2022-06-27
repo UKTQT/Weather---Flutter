@@ -6,17 +6,25 @@ import '../../viewModel/home_view_model.dart';
 
 Expanded bottomBox(
     HomeViewModel _homeViewModel, PageController _pageViewController) {
-  return Expanded(child: Observer(builder: (_) {
-    return _homeViewModel.weatherItems!.isNotEmpty
-        ? Padding(
-            padding: const EdgeInsets.only(left: 8, top: 10, bottom: 10),
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: _homeViewModel.weatherItems?.length ?? 0,
-                itemBuilder: (context, index) {
-                  return bottomDaysBox(
-                      context, _pageViewController, index, _homeViewModel);
-                }))
-        : const Center(child: CircularProgressIndicator(color: Colors.white));
-  }));
+  return Expanded(
+    child: Observer(
+      builder: (_) {
+        return _homeViewModel.weatherItems!.isNotEmpty
+            ? Padding(
+                padding: const EdgeInsets.only(left: 8, top: 22, bottom: 15),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _homeViewModel.weatherItems?.length ?? 0,
+                  itemBuilder: (context, index) {
+                    return bottomDaysBox(
+                        context, _pageViewController, index, _homeViewModel);
+                  },
+                ),
+              )
+            : const Center(
+                child: CircularProgressIndicator(color: Colors.white),
+              );
+      },
+    ),
+  );
 }
