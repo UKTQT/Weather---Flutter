@@ -17,11 +17,19 @@ Padding bottomDaysBox(BuildContext context, PageController _pageViewController,
         },
         child: Container(
           decoration: BoxDecoration(
-            color: context.propertyBox1,
-            borderRadius: BorderRadius.all(
-              Radius.circular(30),
-            ),
-          ),
+              color: context.propertyBox1,
+              borderRadius: BorderRadius.all(
+                Radius.circular(30),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF000000),
+                  offset: Offset.zero,
+                  blurRadius: 1,
+                  spreadRadius: 0.0,
+                  blurStyle: BlurStyle.normal,
+                )
+              ]),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(

@@ -113,8 +113,10 @@ class HomeView extends StatelessWidget {
                             child: Container(
                                 decoration: BoxDecoration(
                                   color: context.whiteColor,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
                                 ),
                                 child: bottomBox(
                                     _homeViewModel, _pageViewController)))
