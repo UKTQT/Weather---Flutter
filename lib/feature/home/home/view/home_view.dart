@@ -112,9 +112,10 @@ class HomeView extends StatelessWidget {
                             height: MediaQuery.of(context).size.height * 0.2,
                             child: Container(
                                 decoration: BoxDecoration(
-                                    color: context.whiteColor,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
+                                  color: context.whiteColor,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
                                 child: bottomBox(
                                     _homeViewModel, _pageViewController)))
                       ]))));
