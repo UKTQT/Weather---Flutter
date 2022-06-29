@@ -54,7 +54,7 @@ class HomeView extends StatelessWidget {
                       height: MediaQuery.of(context).size.height,
                       child: Column(children: [
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.8,
+                            height: MediaQuery.of(context).size.height * 0.82,
                             child: Padding(
                                 padding: const EdgeInsets.only(
                                     top: 50, left: 20, right: 20),
@@ -109,7 +109,7 @@ class HomeView extends StatelessWidget {
                                               color: context.whiteColor));
                                 }))),
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.18,
                             child: Container(
                                 decoration: BoxDecoration(
                                   color: context.whiteColor,
