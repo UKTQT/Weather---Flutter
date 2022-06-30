@@ -67,10 +67,12 @@ class HomeView extends StatelessWidget {
                                           controller: _pageViewController,
                                           itemBuilder: (context, index) {
                                             return Column(children: [
-                                              Expanded(
-                                                  flex: 2,
-                                                  child: titleRow(context,
-                                                      _homeViewModel, index)),
+                                              Container(
+                                                child: Expanded(
+                                                    flex: 2,
+                                                    child: titleRow(context,
+                                                        _homeViewModel, index)),
+                                              ),
                                               Expanded(
                                                   flex: 1,
                                                   child: degreeRow(
