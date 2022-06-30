@@ -16,11 +16,14 @@ Container propertyBox(
       ),
       child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
-          child: Row(children: [
+          child: Column(children: [
             Expanded(flex: 7, child: Image(image: AssetImage(imgUrl))),
             Expanded(
-                flex: 5,
-                child: Text(property!,
-                    style: TextStyle(color: textColor, fontSize: 20)))
+              flex: 5,
+              child: Text(
+                property!,
+                style: TextStyle(color: textColor, fontSize: 20),
+              ),
+            ),
           ])));
 }

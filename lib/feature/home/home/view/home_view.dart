@@ -67,12 +67,10 @@ class HomeView extends StatelessWidget {
                                           controller: _pageViewController,
                                           itemBuilder: (context, index) {
                                             return Column(children: [
-                                              Container(
-                                                child: Expanded(
-                                                    flex: 2,
-                                                    child: titleRow(context,
-                                                        _homeViewModel, index)),
-                                              ),
+                                              Expanded(
+                                                  flex: 2,
+                                                  child: titleRow(context,
+                                                      _homeViewModel, index)),
                                               Expanded(
                                                   flex: 1,
                                                   child: degreeRow(
@@ -96,11 +94,11 @@ class HomeView extends StatelessWidget {
                                                   height: context
                                                       .mediumHeightPadding),
                                               Expanded(
-                                                  flex: 1,
-                                                  child: propertyRow2(
-                                                      _homeViewModel,
-                                                      index,
-                                                      context)),
+                                                flex: 1,
+                                                child: Container(
+                                                  color: Colors.amber,
+                                                ),
+                                              ),
                                               SizedBox(
                                                   height: context
                                                       .mediumHeightPadding)
