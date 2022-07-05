@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../viewModel/home_view_model.dart';
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/color_extension.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/constants/navigation_constant.dart';
+import '../../../../core/init/advertisement/advertisement_manager.dart';
 
 import 'home_view_items/bottomBox.dart';
 import 'home_view_items/degreeRow.dart';
@@ -96,7 +98,22 @@ class HomeView extends StatelessWidget {
                                               Expanded(
                                                 flex: 1,
                                                 child: Container(
-                                                  color: Colors.amber,
+                                                  height: AdvertisementManager
+                                                      .instance
+                                                      .staticAd
+                                                      .size
+                                                      .height
+                                                      .toDouble(),
+                                                  width: AdvertisementManager
+                                                      .instance
+                                                      .staticAd
+                                                      .size
+                                                      .width
+                                                      .toDouble(),
+                                                  child: AdWidget(
+                                                    ad: AdvertisementManager
+                                                        .instance.staticAd,
+                                                  ),
                                                 ),
                                               ),
                                               SizedBox(
@@ -113,7 +130,7 @@ class HomeView extends StatelessWidget {
                             child: Container(
                                 decoration: BoxDecoration(
                                   color: context.whiteColor,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(20),
                                     topRight: Radius.circular(20),
                                   ),
