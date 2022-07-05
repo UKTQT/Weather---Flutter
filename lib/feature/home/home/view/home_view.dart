@@ -56,7 +56,7 @@ class HomeView extends StatelessWidget {
                       height: MediaQuery.of(context).size.height,
                       child: Column(children: [
                         SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.82,
+                            height: MediaQuery.of(context).size.height * 0.72,
                             child: Padding(
                                 padding: const EdgeInsets.only(
                                     top: 50, left: 20, right: 20),
@@ -95,36 +95,25 @@ class HomeView extends StatelessWidget {
                                               SizedBox(
                                                   height: context
                                                       .mediumHeightPadding),
-                                              Expanded(
-                                                flex: 1,
-                                                child: Container(
-                                                  height: AdvertisementManager
-                                                      .instance
-                                                      .staticAd
-                                                      .size
-                                                      .height
-                                                      .toDouble(),
-                                                  width: AdvertisementManager
-                                                      .instance
-                                                      .staticAd
-                                                      .size
-                                                      .width
-                                                      .toDouble(),
-                                                  child: AdWidget(
-                                                    ad: AdvertisementManager
-                                                        .instance.staticAd,
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                  height: context
-                                                      .mediumHeightPadding)
                                             ]);
                                           })
                                       : Center(
                                           child: CircularProgressIndicator(
                                               color: context.whiteColor));
                                 }))),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.10,
+                            child: Container(
+                              height: AdvertisementManager
+                                  .instance.staticAd.size.height
+                                  .toDouble(),
+                              width: AdvertisementManager
+                                  .instance.staticAd.size.width
+                                  .toDouble(),
+                              child: AdWidget(
+                                ad: AdvertisementManager.instance.staticAd,
+                              ),
+                            )),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.18,
                             child: Container(

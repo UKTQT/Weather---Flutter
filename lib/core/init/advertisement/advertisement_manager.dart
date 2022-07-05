@@ -10,9 +10,9 @@ class AdvertisementManager {
   }
 
   late BannerAd staticAd;
-  bool staticAdLoaded = false;
+  //bool staticAdLoaded = false;
   late BannerAd inlineAd;
-  bool inlineAdLoaded = false;
+  //bool inlineAdLoaded = false;
   static const AdRequest request = AdRequest();
 
   void loadStaticBannerAd() {
@@ -22,11 +22,11 @@ class AdvertisementManager {
       request: request,
       listener: BannerAdListener(
         onAdLoaded: (ad) {
-          staticAdLoaded = true;
+          print('$ad loaded');
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('Reklam yüklenemedi');
+          print('InterstitialAd failed to load: $error.');
         },
       ),
     );
@@ -41,11 +41,11 @@ class AdvertisementManager {
       request: request,
       listener: BannerAdListener(
         onAdLoaded: (ad) {
-          inlineAdLoaded = true;
+          print('$ad loaded');
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('Reklam yüklenemedi');
+          print('InterstitialAd failed to load: $error.');
         },
       ),
     );
