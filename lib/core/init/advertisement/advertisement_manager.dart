@@ -6,7 +6,6 @@ class AdvertisementManager {
 
   AdvertisementManager._init() {
     loadStaticBannerAd();
-    loadInlineBannerAd();
   }
 
   late BannerAd staticAd;
@@ -32,24 +31,5 @@ class AdvertisementManager {
     );
 
     staticAd.load();
-  }
-
-  void loadInlineBannerAd() {
-    inlineAd = BannerAd(
-      adUnitId: BannerAd.testAdUnitId,
-      size: AdSize.banner,
-      request: request,
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          print('$ad loaded');
-        },
-        onAdFailedToLoad: (ad, error) {
-          ad.dispose();
-          print('InterstitialAd failed to load: $error.');
-        },
-      ),
-    );
-
-    inlineAd.load();
   }
 }
