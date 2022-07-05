@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'core/init/navigation/navigation_route.dart';
 import 'core/init/navigation/navigation_service.dart';
 import 'core/constants/app_constant.dart';
 import 'core/extensions/color_extension.dart';
 
-main() {
+main() async {
+  await _init();
   runApp(const MyApp());
+}
+
+Future<void> _init() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await MobileAds.instance.initialize();
 }
 
 class MyApp extends StatelessWidget {
