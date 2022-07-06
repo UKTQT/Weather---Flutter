@@ -6,14 +6,14 @@ import 'core/init/navigation/navigation_service.dart';
 import 'core/constants/app_constant.dart';
 import 'core/extensions/color_extension.dart';
 
-main() async {
-  await _init();
+main() {
+  _init();
   runApp(const MyApp());
 }
 
 Future<void> _init() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MobileAds.instance.initialize();
+  MobileAds.instance.initialize();
 }
 
 class MyApp extends StatelessWidget {

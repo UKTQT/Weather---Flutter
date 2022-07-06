@@ -20,9 +20,7 @@ class AdvertisementManager {
       size: AdSize.banner,
       request: request,
       listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          print('$ad loaded');
-        },
+        onAdLoaded: (ad) {},
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
           print('InterstitialAd failed to load: $error.');

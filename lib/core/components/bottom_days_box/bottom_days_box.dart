@@ -20,7 +20,7 @@ Padding bottomDaysBox(BuildContext context, PageController _pageViewController,
           key: _bottomDaysBoxKey,
           decoration: BoxDecoration(
             color: context.propertyBox1,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(30),
             ),
             boxShadow: [
@@ -42,7 +42,7 @@ Padding bottomDaysBox(BuildContext context, PageController _pageViewController,
                   flex: 5,
                   child: Text(
                     '${_homeViewModel.weatherItems?[index].day}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,

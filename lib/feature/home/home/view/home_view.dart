@@ -103,7 +103,7 @@ class HomeView extends StatelessWidget {
                                 }))),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.10,
-                            child: Container(
+                            child: SizedBox(
                               height: AdvertisementManager
                                   .instance.staticAd.size.height
                                   .toDouble(),
