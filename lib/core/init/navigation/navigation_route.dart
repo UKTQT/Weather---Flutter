@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:havadurumu/feature/auth/splash/view/splash_view.dart';
 import 'package:havadurumu/feature/home/settings/view/settings_view.dart';
 
 import '../../constants/navigation_constant.dart';
@@ -14,7 +15,10 @@ class NavigationRoute {
     switch (path.name) {
       case NavigationConstants.DEFAULT:
         return normalNavigate(
-            widget: const HomeView(), pageName: NavigationConstants.DEFAULT);
+            widget: const SplashView(), pageName: NavigationConstants.DEFAULT);
+      case NavigationConstants.HOME_VIEW:
+        return normalNavigate(
+            widget: const HomeView(), pageName: NavigationConstants.HOME_VIEW);
       case NavigationConstants.SETTINGS_VIEW:
         return normalNavigate(
             widget: const SettingsView(),

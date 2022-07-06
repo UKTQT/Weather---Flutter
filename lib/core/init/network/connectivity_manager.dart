@@ -1,15 +1,42 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:mobx/mobx.dart';
 
 enum ConnectivityResults { on, off }
 
 abstract class IConnectivityManager {
-  bool checkNetworkFirstTime();
+  Future<bool?> checkNetworkStatus();
 }
 
 class ConnectivityManager extends IConnectivityManager {
-  var connectivityResult = (Connectivity().checkConnectivity());
+  static final ConnectivityManager _instance = ConnectivityManager._init();
+  static ConnectivityManager get instance => _instance;
 
-  void deneme() {
+  ConnectivityManager._init() {
+    checkNetworkStatus();
+  }
+
+  @observable
+  bool? connectivityStatus;
+
+  @override
+  @action
+  Future<bool?> checkNetworkStatus() async {
+    //var connectivityResult = await (Connectivity().checkConnectivity());
+    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
+      switch (result) {
+        case ConnectivityResult.wifi:
+        case ConnectivityResult.mobile:
+          connectivityStatus = true;
+          break;
+        case ConnectivityResult.none:
+          connectivityStatus = false;
+      }
+    });
+
+    return null;
+  }
+
+  /* void deneme() {
     Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
       switch (result) {
         case ConnectivityResult.bluetooth:
@@ -20,11 +47,5 @@ class ConnectivityManager extends IConnectivityManager {
           return print('başarılı connect ${result}');
       }
     });
-  }
-
-  @override
-  bool checkNetworkFirstTime() {
-    // TODO: implement checkNetworkFirstTime
-    throw UnimplementedError();
-  }
+  } */
 }
