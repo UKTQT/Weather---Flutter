@@ -30,22 +30,16 @@ class ConnectivityManager extends IConnectivityManager {
           break;
         case ConnectivityResult.none:
           connectivityStatus = false;
+          break;
+        case ConnectivityResult.bluetooth:
+          // TODO: Handle this case.
+          break;
+        case ConnectivityResult.ethernet:
+          // TODO: Handle this case.
+          break;
       }
     });
 
     return null;
   }
-
-  /* void deneme() {
-    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-      switch (result) {
-        case ConnectivityResult.bluetooth:
-        case ConnectivityResult.wifi:
-        case ConnectivityResult.ethernet:
-        case ConnectivityResult.mobile:
-        case ConnectivityResult.none:
-          return print('başarılı connect ${result}');
-      }
-    });
-  } */
 }
