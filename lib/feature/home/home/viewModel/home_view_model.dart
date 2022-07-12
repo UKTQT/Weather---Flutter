@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/base/model/base_model.dart';
 import '../../../../core/init/cache/cache_manager.dart';
+import '../../../../core/init/firebase/analytics_manager.dart';
 import '../model/home_model.dart';
 import '../service/home_service.dart';
 
@@ -32,6 +35,21 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
         CacheManager.instance.getStringValue('cache_lang').isEmpty) {
       await CacheManager.instance.setStringValue('cache_city', 'Ankara');
       await CacheManager.instance.setStringValue('cache_lang', 'tr');
+    }
+
+    if (CacheManager.instance.getStringValue('userId').isEmpty) {
+      CacheManager.instance.setStringValue(
+        'userId',
+        Random().nextInt(15).toString(),
+      );
+      AnalyticsManager.instance.setUserId(
+        userId: CacheManager.instance.getStringValue('userId'),
+      );
+    } else {
+      AnalyticsManager.instance.setUserId(
+        userId: CacheManager.instance.getStringValue('userId'),
+      );
+      AnalyticsManager.instance.screenLogEvent();
     }
   }
 

@@ -16,14 +16,14 @@ class AdvertisementManager {
 
   void loadStaticBannerAd() {
     staticAd = BannerAd(
-      adUnitId: BannerAd.testAdUnitId,
+      adUnitId: 'ca-app-pub-6956985293767181/1665951564',
       size: AdSize.banner,
       request: request,
       listener: BannerAdListener(
         onAdLoaded: (ad) {},
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('InterstitialAd failed to load: $error.');
+          //print('InterstitialAd failed to load: $error.');
         },
       ),
     );

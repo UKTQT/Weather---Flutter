@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'firebase_options.dart';
 
 import 'core/init/navigation/navigation_route.dart';
@@ -9,7 +8,6 @@ import 'core/init/navigation/navigation_service.dart';
 import 'core/constants/app_constant.dart';
 import 'core/extensions/color_extension.dart';
 
-FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 main() {
   _init();
   runApp(const MyApp());
@@ -29,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: AppConstant.instance.PROJECT_TITLE,
       onGenerateRoute: NavigationRoute.instance.generateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,
