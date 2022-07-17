@@ -1,4 +1,4 @@
-package com.example.havadurumu
+package com.ufuk.havadurumu
 
 import io.flutter.embedding.android.FlutterActivity
 

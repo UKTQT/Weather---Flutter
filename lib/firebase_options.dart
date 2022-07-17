@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '329048445458',
     projectId: 'weatherapp-d327c',
     storageBucket: 'weatherapp-d327c.appspot.com',
-    iosClientId: '329048445458-v710qq3hq5c3svan0mdo533i7avek3d2.apps.googleusercontent.com',
-    iosBundleId: 'com.example.havadurumu',
+    iosClientId:
+        '329048445458-v710qq3hq5c3svan0mdo533i7avek3d2.apps.googleusercontent.com',
+    iosBundleId: 'com.ufuk.havadurumu',
   );
 }
